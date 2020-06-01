@@ -1,0 +1,38 @@
+name: Post release triggers
+
+on: 
+  repository_dispatch:
+    types: [my-release]
+
+env:
+    VERSION: ${{ github.event.client_payload.tag }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Get version
+        shell: bash
+        run: echo "##[set-output name=version;]$(K=${{ github.event.client_payload.tag }} ; echo ${K##v})"
+        id: version
+
+      - name: Release Arch AUR packages
+        uses: xxxserxxx/actions/arch-package@v1.1.0
+        with:
+          args: gotop%20-V=${{ steps.version.outputs.version }}
+
+      - uses: stefanzweifel/git-auto-commit-action@v4.1.0
+        with:
+            commit_message: Update AUR packages to version "${{ github.event.client_payload.tag }}"
+            tagging_message: ${{ github.event.client_payload.tag }}
+            branch: 'master'
+
+            # Optional commit user and author settings
+            commit_user_name: AUR Updater
+            commit_user_email: ser@ser1.net
+            commit_author: Tap Updater <ser@ser1.net>
+
+# TODO: release aur / aur-bin upstream
