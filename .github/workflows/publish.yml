@@ -20,7 +20,7 @@ jobs:
         id: version
 
       - name: Release Arch AUR packages
-        uses: xxxserxxx/actions/arch-package@v1.1.0
+        uses: xxxserxxx/actions/arch-package@v1.2.0
         with:
           args: gotop%20-V=${{ steps.version.outputs.version }}
 
