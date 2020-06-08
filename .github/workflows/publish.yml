@@ -20,7 +20,7 @@ jobs:
         id: version
 
       - name: Release Arch AUR packages
-        uses: xxxserxxx/actions/arch-package@v1.2.1
+        uses: xxxserxxx/actions/arch-package@v1.2.2
         with:
           args: "gotop%20-V%20|%20tee%20/dev/tty%20|%20grep%20${{steps.version.outputs.version}}"
 
