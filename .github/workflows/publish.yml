@@ -22,7 +22,7 @@ jobs:
       - name: Release Arch AUR packages
         uses: xxxserxxx/actions/arch-package@v1.2.0
         with:
-          args: gotop%20-V=${{ steps.version.outputs.version }}
+          args: "gotop -V | tee /dev/tty | grep ${{ steps.version.outputs.version }}"
 
       - uses: stefanzweifel/git-auto-commit-action@v4.1.0
         with:
