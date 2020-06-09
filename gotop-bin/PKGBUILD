@@ -2,7 +2,7 @@
 # Contributor: Fabio 'Lolix' Loli <fabio.loli@disroot.org>
 
 pkgname=gotop-bin
-pkgver=4.0.0
+pkgver=4.0.1
 pkgrel=1
 pkgdesc="A terminal based graphical activity monitor inspired by gtop and vtop"
 arch=(x86_64 i686 arm armv6h armv7h aarch64)
@@ -21,9 +21,9 @@ source_aarch64=("https://github.com/xxxserxxx/gotop/releases/download/v$pkgver/g
 package() {
   install -Dm755 "$srcdir/gotop" "$pkgdir/usr/bin/gotop"
 }
-md5sums_x86_64=('06365dda25fd3e3c8fc60beb0eb0c769')
-md5sums_i686=('61fac4e7d4cb869d7a48243f9362d6a7')
-md5sums_arm=('60869d21da46688e04235c21082d0cf7')
-md5sums_armv6h=('80d734a428833556b72c5e0f8ff46f3c')
-md5sums_armv7h=('1904e5a1665c2c8f8b6ac2da8f6f4e6d')
-md5sums_aarch64=('09a25bed21e02a0a57fa07bc393c75a1')
+md5sums_x86_64=('7a6752cc71641d7fad0e0b007a8b6e04')
+md5sums_i686=('a4f42c63b25eb6f1d46e677385b37392')
+md5sums_arm=('9b532b8866a7d66de1be4705d95245df')
+md5sums_armv6h=('4410a37763d562214a44078dd011349e')
+md5sums_armv7h=('b578ac923142c0cbbac0d072bc93e49f')
+md5sums_aarch64=('a83f09721e72f5306f919160f7aeffb3')

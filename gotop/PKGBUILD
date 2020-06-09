@@ -3,7 +3,7 @@
 # Contributor: Caleb Bassi <calebjbassi@gmail.com>
 
 pkgname=gotop
-pkgver=4.0.0
+pkgver=4.0.1
 pkgrel=1
 pkgdesc="A terminal based graphical activity monitor inspired by gtop and vtop"
 arch=(x86_64 i686 arm armv6h armv7h aarch64)
@@ -28,4 +28,4 @@ build() {
 package() {
   install -Dm755 "${srcdir}"/${pkgname}-${pkgver}/gotop "${pkgdir}"/usr/bin/gotop
 }
-md5sums=('f21d9386ea8fcf5bf0d1f3b4ce0bf04b')
+md5sums=('d098e7e054e915190955d255fe835e2d')
